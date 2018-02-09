@@ -1,0 +1,12 @@
+---
+- name: Get uname
+  shell: uname -r
+  register: uname
+
+- name: Get Codename
+  shell: lsb_release -cs
+  register: codename
+
+- name: codename details
+  debug:
+    msg: " codename value {{ codename.stdout }}"

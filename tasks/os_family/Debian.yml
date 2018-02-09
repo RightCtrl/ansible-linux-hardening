@@ -1,0 +1,9 @@
+---
+
+- name: depends for Ubuntu
+  include: "Ubuntu.yml"
+  when: ansible_distribution == "Ubuntu"
+
+- name: depends for Debian
+  include: "Deb.yml"
+  when: ansible_distribution == "Debian"

@@ -13,8 +13,7 @@
   debug:
     msg: "System OS Family {{ ansible_os_family }}"
 
-#- name: Install dependencies
-#  include: "os_family/{{ ansible_os_family }}.yml"
+
 
 # Update the Packages to the latest
 #******************************************************************************
@@ -44,3 +43,6 @@
 - include: "core_dumps.yml"
 - include: "sysctl.yml"
 - include: "kernel_modules.yml"
+
+- name: Install dependencies
+  include: "os_family/{{ ansible_os_family }}.yml"
